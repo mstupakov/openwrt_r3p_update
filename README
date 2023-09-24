@@ -1,0 +1,20 @@
+# Converts openwrt-squashfs-factory.bin to pandabox FW upgrade format
+
+maks@maks-fpga:~/openwrt$ time ./openwrt_2_pboot_for_r3p.sh openwrt-21.02.0-rc1-ramips-mt7621-xiaomi_mi-router-3-pro-squashfs-factory.bin 
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             uImage header, header size: 64 bytes, header CRC: 0xDFB55E57, created: 2021-04-18 10:06:57, image size: 2352647 bytes, Data Address: 0x80001000, Entry Point: 0x80001000, data CRC: 0x6A276996, OS: Linux, CPU: MIPS, image type: OS Kernel Image, compression type: none, image name: "MIPS OpenWrt Linux-5.4.111"
+5484          0x156C          Copyright string: "Copyright (C) 2011 Gabor Juhos <juhosg@openwrt.org>"
+5692          0x163C          LZMA compressed data, properties: 0x6D, dictionary size: 8388608 bytes, uncompressed size: 7398714 bytes
+
+WARNING: Extractor.execute failed to run external extractor 'ubireader_extract_files -o 'ubifs-root' '%e'': [Errno 2] No such file or directory: 'ubireader_extract_files', 'ubireader_extract_files -o 'ubifs-root' '%e'' might not be installed correctly
+4194304       0x400000        UBI erase count header, version: 1, EC: 0x0, VID header offset: 0x800, data offset: 0x1000
+
+1+0 records in
+1+0 records out
+4194304 bytes (4.2 MB, 4.0 MiB) copied, 0.00550116 s, 762 MB/s
+
+real	1m22.682s
+user	1m22.525s
+
